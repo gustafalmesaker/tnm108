@@ -24,8 +24,6 @@ plt.tight_layout()# let's make good plots
 plt.show()
 
 
-
-
 import pandas as pd
 cancer_df=pd.DataFrame(cancer.data,columns=cancer.feature_names)# just convert the scikit learn data-set to pandas data-frame.
 plt.subplot(1,2,1)#fisrt plot
