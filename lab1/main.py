@@ -114,3 +114,5 @@ for i in range(len(X)):
     if prediction[0] == y[i]:
         correct += 1
 print(correct/len(X))
+
+
