@@ -50,7 +50,7 @@ print("after scaling minimum", X_scaled.min(axis=0))
 
 
 from sklearn.decomposition import PCA
-pca=PCA(n_components=3)
+pca=PCA(n_components=2) #here i am
 pca.fit(X_scaled)
 X_pca=pca.transform(X_scaled)
 #let's check the shape of X_pca array
@@ -60,6 +60,7 @@ print("shape of X_pca", X_pca.shape)
 
 ex_variance=np.var(X_pca,axis=0)
 ex_variance_ratio = ex_variance/np.sum(ex_variance)
+print("ex_variance_ratio = ")
 print(ex_variance_ratio)
 
 
@@ -68,7 +69,7 @@ print(ex_variance_ratio)
 # Xax=X_pca[:,0]
 # Yax=X_pca[:,1]
 Xax=X_pca[:,0]
-Yax=X_pca[:,2]
+Yax=X_pca[:,1]
 labels=cancer.target
 cdict={0:'red',1:'green'}
 labl={0:'Malignant',1:'Benign'}

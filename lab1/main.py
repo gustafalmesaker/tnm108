@@ -99,9 +99,11 @@ for i in range(len(X)):
     prediction = kmeans.predict(predict_me)
     if prediction[0] == y[i]:
         correct += 1 
-print(correct/len(X))
+print("utan scaler = ")
+print( correct/len(X))
 
 
+correct = 0
 scaler = MinMaxScaler()
 X_scaled = scaler.fit_transform(X)
 kmeans.fit(X_scaled)
@@ -113,6 +115,5 @@ for i in range(len(X)):
     prediction = kmeans.predict(predict_me)
     if prediction[0] == y[i]:
         correct += 1
+print("med scaler = ")
 print(correct/len(X))
-
-
