@@ -18,7 +18,7 @@ for i in range(30):
     ax[i].set_title(cancer.feature_names[i],fontsize=9)
     ax[i].axes.get_xaxis().set_visible(False) # the x-axis coordinates are not so useful, as we just want to look how well separated the histograms are
     ax[i].set_yticks(())
-
+    
 ax[0].legend(['malignant','benign'],loc='best',fontsize=8)
 plt.tight_layout()# let's make good plots
 plt.show()

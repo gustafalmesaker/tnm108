@@ -88,7 +88,6 @@ y = np.array(train['Survived'])
 train.info()
 test.info()
 
-
 kmeans = KMeans(n_clusters=2, max_iter=600, algorithm = 'lloyd')
 kmeans.fit(X)
 KMeans(algorithm='lloyd', copy_x=True, init='k-means++', max_iter=600, n_clusters=2, n_init=10, random_state=None, tol=0.0001, verbose=0)
