@@ -48,7 +48,7 @@ y_pred = knn.predict(X_test)
 print("Accuracy for k=5: ",metrics.accuracy_score(y_test, y_pred))
 
 #REGENERATING MODEL FOR K=7
-knn = KNeighborsClassifier(n_neighbors=13)
+knn = KNeighborsClassifier(n_neighbors=7)
 knn.fit(X_train, y_train)
 y_pred = knn.predict(X_test)
 #Model Evaluation for k=7
