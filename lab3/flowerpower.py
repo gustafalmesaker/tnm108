@@ -153,7 +153,7 @@ def predict(self, data):
          predicted_targets.append(predicted)
     return predicted_targets
 
-#4. Accuracy
+#3. Accuracy
 def accuracy(self, ground_true, predicted):
     """
     :param ground_true: list of ground true classes of test_data :param predicted: list of predicted classes
