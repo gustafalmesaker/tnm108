@@ -4,6 +4,8 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.datasets import load_files
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.metrics import confusion_matrix
 
 
 nltk.download('punkt')
@@ -58,7 +60,6 @@ docs_counts = fooVzer.fit_transform(docs)
 #print(docs_counts.toarray())
 
 # Convert raw frequency counts into TF-IDF (Term Frequency -- Inverse Document Frequency) values
-from sklearn.feature_extraction.text import TfidfTransformer
 fooTfmer = TfidfTransformer()
 
 # Again, fit and transform
@@ -84,8 +85,7 @@ newdocs_tfidf = fooTfmer.transform(newdocs_counts)
 
 #Back to real data: movie reviews
 # Split data into training and test sets
-docs_train, docs_test, y_train, y_test = train_test_split(movie.data, movie.target, 
-                                                          test_size = 0.20, random_state = 12)
+docs_train, docs_test, y_train, y_test = train_test_split(movie.data, movie.target, test_size = 0.20, random_state = 12)
 
 # initialize CountVectorizer
 movieVzer= CountVectorizer(min_df=2, tokenizer=nltk.word_tokenize, max_features=3000) # use top 3000 words only. 78.25% acc.
@@ -124,9 +124,8 @@ y_pred = clf.predict(docs_test_tfidf)
 #print(sklearn.metrics.accuracy_score(y_test, y_pred))
 
 # Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
-#print(cm)
+print(cm)
 
 #Trying the classifier on fake movie reviews
 # very short and fake movie reviews
