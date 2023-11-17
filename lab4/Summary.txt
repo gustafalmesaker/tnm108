@@ -1,0 +1,24 @@
+Summary
+part 1:
+i) What does the TF-IDF measure?
+	TF = antalet gånger ordet förekommer i texten / Antalet ord i corpus
+	IDF = Antalet document i corpusen / Antalet dokument som innehåller ordet
+
+	Mäter vikten av ord.
+
+ii) Hur används TF-IDF för att
+	a) jämföra dokument
+		Skapar vektorer, beräkna cosine-angle mellan dem (1 ger lika, -1 olika)
+	b) klassa text
+		Dela upp och skapa TF-IDF matriser. Dela upp och lär en modell
+
+
+part 2:
+
+
+
+part 3:
+i) Explain the textrank algorithm and how it works.
+	Länkar mellan meningar, fler länkar ---> viktigare
+
+ii) 
